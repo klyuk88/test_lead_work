@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./assets/bootstrap.min.css">
+</head>
+<body>
+  
+  <div id="app">
+   <div class="container">
+    <header class="py-4">
+      <select class="form-select w-25" v-model="selectedDomian">
+        <option
+        v-for="(item, index) in domians" :key="item.id"
+        :value="item.id"
+        >
+        {{item.domain}}
+      </option>
+      
+      </select>
+    </header>
+
+    <div class="mt-5">
+      <form class="w-50">
+        <div class="mb-3">
+          <label class="form-label">Name</label>
+          <input type="text" class="form-control" id="" placeholder="Name" v-model="formName" required>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Slug</label>
+          <input type="text" class="form-control" id="" placeholder="Slug" v-model="formSlug" required>
+        </div>
+        <div class="mb-3">
+          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" v-model="formIsShow" required>
+          <label class="form-check-label" for="flexCheckDefault">
+            Is show
+          </label>
+        </div>
+        <button class="btn btn-success" @click.prevent="sendForm">Сохранить</button>
+  
+      </form>
+    </div>
+   </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14"></script>
+  <script src="./assets/script.js"></script>
+</body>
+</html>
